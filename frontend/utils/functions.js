@@ -19,13 +19,18 @@ export const checkUser = async () => {
 
   export const newRide = async (signer, contract, origin, destination, departureTime, fare, seats) => {
     try {
+      console.log("vbdyub1");
       const tx = await contract.createride(origin, destination, departureTime, fare, seats);
+      console.log("vbdyub2");
       // setLoading(true);
       await tx.wait();
+      console.log("vbdyub3");
       console.log(tx);
       // setLoading(false);
     }
     catch (err) {
+      
+      console.log("vbdyub");
       console.error(err);
     }
   }
